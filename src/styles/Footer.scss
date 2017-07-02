@@ -1,0 +1,16 @@
+@import './_variable.scss';
+@import './_color.scss';
+@media (max-width: $screen-xs-min) {
+    body {
+        .footer {
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            height: $footer-mini-height;
+            width: 100%;
+            background-color: $grey-mint;
+            font: 15px solid white;
+
+        }
+    }
+}
