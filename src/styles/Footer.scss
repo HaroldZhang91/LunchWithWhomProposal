@@ -9,8 +9,30 @@
             height: $footer-mini-height;
             width: 100%;
             background-color: $grey-mint;
-            font: 15px solid white;
-
+            .footer-content {
+                color: white;
+                .footer-user {
+                    float: left;
+                    width: 33%;
+                    font-size: $footer-font-size;
+                    text-align: center;
+                }
+                .footer-post {
+                    float: left;
+                    width: 33%;
+                    font-size: $footer-font-size;
+                    text-align: center;
+                }
+                .footer-circle {
+                    float: left;
+                    width: 33%;
+                    font-size: $footer-font-size;
+                    text-align: center;
+                }
+                .active {
+                    color: $green;
+                }
+            }
         }
     }
 }
