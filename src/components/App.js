@@ -1,16 +1,14 @@
 import React from 'react';
-import YeomanImage from './YeomanImage';
-import './app.css';
+import Footer from './Footer/Footer.js';
+import '../styles/font-awesome/css/font-awesome.css';
+// import '../styles/global/_color.scss';
 
 class AppComponent extends React.Component {
 
   render() {
     return (
       <div className="index">
-        <YeomanImage />
-        <div className="notice">
-          Please edit <code>src/components/App.js</code> to get started!
-        </div>
+        <Footer />
       </div>
     );
   }
