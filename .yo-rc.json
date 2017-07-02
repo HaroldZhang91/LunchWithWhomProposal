@@ -1,0 +1,9 @@
+{
+  "generator-react-webpack": {
+    "appName": "lunch-with-whom-proposal",
+    "style": "scss",
+    "cssmodules": true,
+    "postcss": true,
+    "generatedWithVersion": 4
+  }
+}
