@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './Footer/Footer.js';
+import Footer from './Footer/Footer';
 import '../styles/font-awesome/css/font-awesome.css';
 // import '../styles/global/_color.scss';
 
@@ -14,7 +14,6 @@ class AppComponent extends React.Component {
   }
 }
 
-AppComponent.defaultProps = {
-};
+AppComponent.defaultProps = {};
 
 export default AppComponent;
