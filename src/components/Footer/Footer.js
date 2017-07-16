@@ -5,7 +5,8 @@ import './Footer.scss';
 
 const Footer = ({
   currentTab,
-  onSwitchTab
+  onSwitchTab,
+  onSwitchState
 }) => {
   const footerUserClass = classNames({
     'footer-item': true,
@@ -25,13 +26,13 @@ const Footer = ({
   return (
     <div className="footer">
       <div className={footerUserClass}>
-        <div className="fa fa-user" onClick={() => onSwitchTab('USER_INFO')} />
+        <div className="fa fa-user" onClick={() => { onSwitchTab('USER_INFO'); onSwitchState('MY_PROFILE'); }} />
       </div>
       <div className={footerPostClass}>
-        <div className="fa fa-calendar-plus-o" onClick={() => onSwitchTab('POST')} />
+        <div className="fa fa-calendar-plus-o" onClick={() => { onSwitchTab('POST'); onSwitchState('POST'); }} />
       </div>
       <div className={footerCircleClass}>
-        <div className="fa fa-safari" onClick={() => onSwitchTab('CIRCLE')} />
+        <div className="fa fa-safari" onClick={() => { onSwitchTab('CIRCLE'); onSwitchState('MOMENTS'); }} />
       </div>
     </div>
   );
@@ -39,7 +40,8 @@ const Footer = ({
 
 Footer.propTypes = {
   currentTab: PropTypes.string.isRequired,
-  onSwitchTab: PropTypes.func.isRequired
+  onSwitchTab: PropTypes.func.isRequired,
+  onSwitchState: PropTypes.func.isRequired
 };
 
 export default Footer;

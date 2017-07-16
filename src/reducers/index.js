@@ -1,8 +1,12 @@
-import { combineReducers } from 'redux';
+import {
+  combineReducers
+} from 'redux';
 import tab from './tab';
+import state from './state';
 
 const app = combineReducers({
-  tab
+  tab,
+  state
 });
 
 export default app;

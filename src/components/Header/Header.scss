@@ -1,0 +1,24 @@
+@import '../../styles/_variable.scss';
+@import '../../styles/_color.scss';
+@media (max-width: $screen-xs-min) {
+    .header {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        height: $header-mini-height;
+        width: 100%;
+        background-color: map-get(map-get($component-colors, dark), base);
+        .header-title {
+            width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
+            color: map-get(map-get($component-colors, white), base);
+            text-align: center;
+            font-size: $header-font-size;
+            line-height: $header-font-size;
+            margin-top: $header-font-margin;
+            margin-bottom: $header-font-margin;
+        }
+        .header-addtion-button {}
+    }
+}

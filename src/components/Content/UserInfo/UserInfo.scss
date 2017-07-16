@@ -1,0 +1,36 @@
+@import '../../../styles/_variable.scss';
+@import '../../../styles/_color.scss';
+@media (max-width: $screen-xs-min) {
+    .footer {
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        height: $footer-mini-height;
+        width: 100%;
+        background-color: map-get(map-get($component-colors, grey-mint), base);
+        .footer-item {
+            color: map-get(map-get($component-colors, white), base);
+            &.active {
+                color: map-get(map-get($component-colors, green), base);
+            }
+            &.footer-user {
+                float: left;
+                width: 33%;
+                font-size: $footer-font-size;
+                text-align: center;
+            }
+            &.footer-post {
+                float: left;
+                width: 33%;
+                font-size: $footer-font-size;
+                text-align: center;
+            }
+            &.footer-circle {
+                float: left;
+                width: 33%;
+                font-size: $footer-font-size;
+                text-align: center;
+            }
+        }
+    }
+}

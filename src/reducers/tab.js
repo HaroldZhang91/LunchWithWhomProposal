@@ -1,26 +1,14 @@
 const tab = (state = {
-  id: 'btnFooter_USER_INFO',
   currentTab: 'USER_INFO'
 }, action) => {
-  switch (action.currentTab) {
-    case 'USER_INFO':
-      return {
-        id: action.id,
-        currentTab: action.type
-      };
-    case 'POST':
-      return {
-        id: action.id,
-        currentTab: action.type
-      };
-    case 'CIRCLE':
-      return {
-        id: action.id,
-        currentTab: action.type
-      };
-    default:
-      return state;
+  if (!action.type.includes('tabSwitch:')) {
+    return state;
   }
+  const startIndex = action.type.indexOf(':');
+  const newTab = action.type.substr(startIndex + 1);
+  return {
+    currentTab: newTab
+  };
 };
 
 export default tab;

@@ -1,0 +1,14 @@
+@import '../../styles/_variable.scss';
+@import '../../styles/_color.scss';
+@media (max-width: $screen-xs-min) {
+    .content {
+        position: fixed;
+        left: 0px;
+        top: $header-mini-height;
+        bottom: $footer-mini-height;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        overflow-y: scroll;
+    }
+}

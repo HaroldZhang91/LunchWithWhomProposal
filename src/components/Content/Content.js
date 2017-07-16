@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+// import classnames from 'classnames';
+import './Content.scss';
 
 const Content = ({
-  currentTab,
-  onSwitchTab
+  currentTab
 }) => (
   <div className="content">
-    <div className={contentUserClass} />
-    <div className={contentUserClass} />
-    <div className={contentUserClass} />
+    { currentTab === 'USER_INFO' ? <div>UserInfo</div> : null }
+    { currentTab === 'POST' ? <div>Post</div> : null }
+    { currentTab === 'CIRCLE' ? <div>Cicle</div> : null }
   </div>
 );
+
+Content.propTypes = {
+  currentTab: PropTypes.string.isRequired
+};
 
 export default Content;

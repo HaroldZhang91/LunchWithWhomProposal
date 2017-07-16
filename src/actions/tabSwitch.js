@@ -1,7 +1,7 @@
 const tabSwitch = state => ({
-  id: `btnFooter_${state}`,
+  id: `btnFooter:${state}`,
   currentTab: state,
-  type: state
+  type: `tabSwitch:${state}`
 });
 
 export default tabSwitch;

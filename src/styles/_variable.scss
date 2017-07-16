@@ -1,26 +1,23 @@
 //== Media queries breakpoints
 //
 //Define the breakpoints at which your layout will change, adapting to different screen sizes.
-
 // Extra small screen / phone
-$screen-xs-min:                       480px !default;
-
+$screen-xs-min: 480px !default;
 // Small screen / tablet
-$screen-sm-min:                       768px !default;
-
+$screen-sm-min: 768px !default;
 // Medium screen / desktop
-$screen-md-min:                       992px !default;
-
+$screen-md-min: 992px !default;
 // Large screen / wide desktop
-$screen-lg-min:                       1200px !default;
-
+$screen-lg-min: 1200px !default;
 // Large scree / wider desktop
-$screen-lg-med:                           1260px !default;
-
+$screen-lg-med: 1260px !default;
 // So media queries don't overlap when required, provide a maximum
-$screen-xs-max:                       ($screen-sm-min - 1) !default;  // 767px
-$screen-sm-max:                       ($screen-md-min - 1) !default;  // 991px
-$screen-md-max:                       ($screen-lg-min - 1) !default;  // 1199px
-
+$screen-xs-max: ($screen-sm-min - 1) !default; // 767px
+$screen-sm-max: ($screen-md-min - 1) !default; // 991px
+$screen-md-max: ($screen-lg-min - 1) !default; // 1199px
 $footer-mini-height: 50px;
 $footer-font-size: 40px;
+$footer-font-margin: ($footer-mini-height - $footer-font-size) / 2;
+$header-mini-height: 40px;
+$header-font-size: 20px;
+$header-font-margin: ($header-mini-height - $header-font-size) /2;
