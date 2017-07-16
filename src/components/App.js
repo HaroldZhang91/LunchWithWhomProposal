@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './Footer/Footer';
+import Footer from '../containers/Footer';
 import '../styles/font-awesome/css/font-awesome.css';
 // import '../styles/global/_color.scss';
 
