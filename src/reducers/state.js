@@ -1,8 +1,8 @@
 import titleShow from '../actions/stateSwitchMethod';
 
 const tab = (state = {
-  currentState: 'MY_PROFILE',
-  text: 'Me'
+  currentState: 'MOMENTS',
+  text: 'Moments'
 }, action) => {
   if (!action.type.includes('stateSwitch:')) {
     return state;

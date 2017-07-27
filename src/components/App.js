@@ -6,13 +6,12 @@ import '../styles/font-awesome/css/font-awesome.css';
 
 
 class AppComponent extends React.Component {
-
   render() {
     return (
       <div className="index">
         <Header />
-        <Footer />
         <Content />
+        <Footer />
       </div>
     );
   }

@@ -1,5 +1,5 @@
 const tab = (state = {
-  currentTab: 'USER_INFO'
+  currentTab: 'CIRCLE'
 }, action) => {
   if (!action.type.includes('tabSwitch:')) {
     return state;
