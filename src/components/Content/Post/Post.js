@@ -3,15 +3,29 @@ import PropTypes from 'prop-types';
 import './Post.scss';
 
 const Poster = ({
-  listOfGroup
+  listOfActivity
 }) => {
-
+  const items = [];
+  listOfActivity.forEach((item) => {
+    items.push(
+      <div className="activity-item">{item.title}</div>
+      );
+  });
+  return (
+    <div className="activity-list">
+      {items}
+    </div>
+  );
 };
 
 Poster.propTypes = {
-  listOfGroup: PropTypes.PropTypes.arrayOf(PropTypes.shape({
-    color: PropTypes.string.isRequired,
-    fontSize: PropTypes.number.isRequired,
+  listOfActivity: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    deadline: PropTypes.string,
+    lunchTime: PropTypes.string.isRequired,
+    currentPeopleCount: PropTypes.number.isRequired,
+    maxPeopleCount: PropTypes.number
   }))
 };
 

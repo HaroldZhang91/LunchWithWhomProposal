@@ -3,10 +3,12 @@ import {
 } from 'redux';
 import tab from './tab';
 import state from './state';
+import activities from './activities';
 
 const app = combineReducers({
   tab,
-  state
+  state,
+  activities
 });
 
 export default app;
