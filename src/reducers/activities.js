@@ -1,4 +1,6 @@
-const activities = (state = [], action) => {
+import defaultActivities from '../exampleData/defaultActivities';
+
+const activities = (state = defaultActivities, action) => {
   if (!action.type.includes('stateSwitch:')) {
     return state;
   }

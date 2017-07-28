@@ -1,0 +1,40 @@
+@import '../../../styles/_variable.scss';
+@import '../../../styles/_color.scss';
+@media (max-width: $screen-xs-min) {
+  .content {
+    .activity-list {
+      .activity-item {
+        color: map-get(map-get($component-colors, white), base);
+        padding: 5px;
+        .title {
+          float: left;
+          width: 50%;
+          margin-bottom: 3px;
+        }
+        .count-down {
+          float: left;
+          width: 50%;
+          margin-bottom: 3px;
+        }
+        .lunch-time {
+          float: left;
+          width: 50%;
+          margin-bottom: 3px;
+        }
+        .people-info {
+          float: left;
+          width: 50%;
+          margin-bottom: 3px;
+        }
+        &.regular {
+          background-color: map-get(map-get($component-colors, green-turquoise), base);
+        }
+        &:after {
+          content: '';
+          clear: both;
+          display: table;
+        }
+      }
+    }
+  }
+}
