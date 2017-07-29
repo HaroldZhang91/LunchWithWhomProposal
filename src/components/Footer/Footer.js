@@ -26,13 +26,13 @@ const Footer = ({
   return (
     <div className="footer">
       <div className={footerCircleClass}>
-        <div className="fa fa-safari" onClick={() => { onSwitchTab('CIRCLE'); onSwitchState('MOMENTS'); }} />
+        <button className="fa fa-safari" onClick={() => { onSwitchTab('CIRCLE'); onSwitchState('MOMENTS'); }} />
       </div>
       <div className={footerPostClass}>
-        <div className="fa fa-calendar-plus-o" onClick={() => { onSwitchTab('POST'); onSwitchState('POST'); }} />
+        <button className="fa fa-calendar-plus-o" onClick={() => { onSwitchTab('POST'); onSwitchState('POST'); }} />
       </div>
       <div className={footerUserClass}>
-        <div className="fa fa-user" onClick={() => { onSwitchTab('USER_INFO'); onSwitchState('MY_PROFILE'); }} />
+        <button className="fa fa-user" onClick={() => { onSwitchTab('USER_INFO'); onSwitchState('MY_PROFILE'); }} />
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const Header = ({
   return (
     <div className="header">
       <div className="header-title">{currentText}</div>
-      <div className="header-addtion-button"></div>
+      <div className="header-addtion-button">..</div>
     </div>
   );
 };

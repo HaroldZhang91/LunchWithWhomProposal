@@ -1,40 +1,73 @@
 @import '../../../styles/_variable.scss';
 @import '../../../styles/_color.scss';
 @media (max-width: $screen-xs-min) {
-  .content {
-    .activity-list {
-      .activity-item {
-        color: map-get(map-get($component-colors, white), base);
-        padding: 5px;
-        .title {
-          float: left;
-          width: 50%;
-          margin-bottom: 3px;
+    .content {
+        .activity-list {
+            .activity-item {
+                color: map-get(map-get($component-colors, white), base);
+                border-bottom: 1px solid map-get(map-get($component-colors, white), base);
+                padding: 8px;
+                font-size: 20px;
+                line-height: 20px;
+                .item-row {
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    margin-bottom: 5px;
+                    margin-top: 5px;
+                    &:after {
+                        content: '';
+                        clear: both;
+                        display: table;
+                    }
+                }
+                .title {
+                    position: relative;
+                    float: left;
+                    width: 50%;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                .count-down {
+                    position: relative;
+                    float: left;
+                    width: 50%;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                .lunch-time {
+                    position: relative;
+                    float: left;
+                    width: 50%;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                .people-info {
+                    position: relative;
+                    float: left;
+                    width: 50%;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                .quick-join {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    float: left;
+                    font-size: 40px;
+                    color: white;
+                }
+                &.regular {
+                    background-color: map-get(map-get($component-colors, purple), base);
+                }
+                &.with-topic {
+                    background-color: map-get(map-get($component-colors, green-dark), base);
+                }
+                &.unavailable {
+                    background-color: map-get(map-get($component-colors, grey-salt), base);
+                    .item-row.action {
+                        display: none;
+                    }
+                }
+            }
         }
-        .count-down {
-          float: left;
-          width: 50%;
-          margin-bottom: 3px;
-        }
-        .lunch-time {
-          float: left;
-          width: 50%;
-          margin-bottom: 3px;
-        }
-        .people-info {
-          float: left;
-          width: 50%;
-          margin-bottom: 3px;
-        }
-        &.regular {
-          background-color: map-get(map-get($component-colors, green-turquoise), base);
-        }
-        &:after {
-          content: '';
-          clear: both;
-          display: table;
-        }
-      }
     }
-  }
 }

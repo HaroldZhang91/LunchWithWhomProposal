@@ -9,9 +9,13 @@
         width: 100%;
         background-color: map-get(map-get($component-colors, grey-mint), base);
         .footer-item {
-            color: map-get(map-get($component-colors, white), base);
+            button {
+                color: map-get(map-get($component-colors, white), base);
+            }
             &.active {
-                color: map-get(map-get($component-colors, green), base);
+                button {
+                    color: map-get(map-get($component-colors, green), base);
+                }
             }
             &.footer-user {
                 float: left;
