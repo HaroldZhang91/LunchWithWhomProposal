@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  Component
+} from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import classNames from 'classnames';
@@ -52,7 +54,15 @@ const getItemCountDown = (currentTime, endTime) => {
   if (nextDays > 0) {
     return '';
   }
-  return `CountDown: ${nextHours}:${nextMinutes}:${nextSeconds}`;
+
+  const handleNumber = (number) => {
+    if (number < 10) {
+      return `0${number}`;
+    }
+    return number;
+  };
+
+  return `CountDown: ${handleNumber(nextHours)}:${handleNumber(nextMinutes)}:${handleNumber(nextSeconds)}`;
 };
 
 /**
@@ -87,6 +97,23 @@ const getItemClassName = (activityItem) => {
   return itemClass;
 };
 
+/**
+ * get count down array
+ * @param  {Array} activities acitivities
+ * @return {Array}            count donw array
+ */
+const getCountDownArray = (activities) => {
+  const countDonwArray = activities.map((item) => {
+    const countDonwItem = {
+      id: item.id,
+      countDownInfo: getItemCountDown(moment(), item.deadline)
+    };
+    return countDonwItem;
+  });
+  return countDonwArray;
+};
+
+/** convert date to show */
 const getShowDate = lunchTime => moment(lunchTime).format('MMMM, DD');
 
 /**
@@ -102,33 +129,59 @@ const getPeopleInfo = (currentPeopleCount, maxPeopleCount) => {
   return currentPeopleCount;
 };
 
-const Post = ({
-  listOfActivity
-}) => {
-  const items = [];
-  listOfActivity.forEach((item) => {
-    items.push(
-      <div key={item.id} className={getItemClassName(item)}>
-        <div className="item-row">
-          <div className="title">{getItemTitle(item.title, item.type)}</div>
-          <div className="count-down">{getItemCountDown(moment(), item.deadline)}</div>
+class Post extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      countDonwArray: getCountDownArray(props.listOfActivity)
+    };
+  }
+  componentDidMount() {
+    this.timmer = setInterval(() => {
+      this.setState({
+        countDonwArray: getCountDownArray(this.props.listOfActivity)
+      });
+    }, 100);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timmer);
+  }
+  findCountDown(id) {
+    const countDownItem = this.state.countDonwArray.find(item => item.id === id);
+    if (countDownItem) {
+      return countDownItem.countDownInfo;
+    }
+    return '';
+  }
+  render() {
+    const {
+      listOfActivity
+    } = this.props;
+    const items = [];
+    listOfActivity.forEach((item) => {
+      items.push(
+        <div key={item.id} className={getItemClassName(item)}>
+          <div className="item-row">
+            <div className="title">{getItemTitle(item.title, item.type)}</div>
+            <div className="count-down">{this.findCountDown(item.id)}</div>
+          </div>
+          <div className="item-row">
+            <div className="lunch-time">Date: {getShowDate(item.lunchTime)}</div>
+            <div className="people-info">People: {getPeopleInfo(item.currentPeopleCount, item.maxPeopleCount)}</div>
+          </div>
+          <div className="item-row action">
+            <button className="quick-join icon-check" />
+          </div>
         </div>
-        <div className="item-row">
-          <div className="lunch-time">Date: {getShowDate(item.lunchTime)}</div>
-          <div className="people-info">People: {getPeopleInfo(item.currentPeopleCount, item.maxPeopleCount)}</div>
-        </div>
-        <div className="item-row action">
-          <button className="quick-join icon-check" />
-        </div>
+      );
+    });
+    return (
+      <div className="activity-list">
+        {items}
       </div>
     );
-  });
-  return (
-    <div className="activity-list">
-      {items}
-    </div>
-  );
-};
+  }
+}
 
 Post.propTypes = {
   listOfActivity: PropTypes.arrayOf(PropTypes.shape({
