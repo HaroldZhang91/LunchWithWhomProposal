@@ -11,6 +11,8 @@
         .footer-item {
             button {
                 color: map-get(map-get($component-colors, white), base);
+                background-color: transparent;
+                border-color: transparent;
             }
             &.active {
                 button {

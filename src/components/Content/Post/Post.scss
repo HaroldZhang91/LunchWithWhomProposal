@@ -54,6 +54,8 @@
                     float: left;
                     font-size: 40px;
                     color: white;
+                    background-color: transparent;
+                    border-color: transparent;
                 }
                 &.regular {
                     background-color: map-get(map-get($component-colors, purple), base);
